@@ -1,5 +1,8 @@
 # eusi-sdk-core-js
-The core environment agnostic library for providing a simple interface around **EUSI** delivery API.
+The core, environment agnostic library for providing a simple and elegant interface for interacting with **EUSI** delivery API.
 
-The documentation is in progress.
-Coming every moment...
+> EUSI is API-first CMS that is user-friendly, beautifully
+designed and easy to use.
+
+This library represents core logic for our browser and node specific SDK versions and it is not meant to be used independently.
+For more information please visit [eusi-sdk-browser](https://github.com/jsguru-io/eusi-sdk-browser) and [eusi-sdk-node](https://github.com/jsguru-io/eusi-sdk-node).
