@@ -2,11 +2,16 @@
   "name": "eusi-sdk-core",
   "version": "1.0.0",
   "description": "SDK for accessing EUSI delivery API",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsguru-io/eusi-sdk-core-js"
+  },
   "keywords": [
     "eusi",
     "sdk",
-    "EUSI",
-    "browser",
+    "core",
+    "CMS",
+    "headless",
     "delivery",
     "API"
   ],
