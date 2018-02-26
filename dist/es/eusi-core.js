@@ -357,7 +357,7 @@ var Forms = (function (_ref) {
 });
 
 var config = {
-    deliveryApi: 'https://delivery.stg.eusi.cloud/api/v1'
+    deliveryApi: 'https://delivery.eusi.cloud/api/v1'
 };
 
 var Taxonomy = (function (_ref) {
