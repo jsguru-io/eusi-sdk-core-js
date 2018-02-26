@@ -15,9 +15,9 @@
     "delivery",
     "API"
   ],
-  "browser": "dist/browser/eusi-core.js",
-  "main": "dist/cjs/eusi-core.js",
-  "module": "dist/es/eusi-core.js",
+  "browser": "dist/browser/eusi-sdk-core.js",
+  "main": "dist/cjs/eusi-sdk-core.js",
+  "module": "dist/es/eusi-sdk-core.js",
   "author": "JS Guru International",
   "license": "MIT",
   "devDependencies": {

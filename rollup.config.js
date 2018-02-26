@@ -26,7 +26,7 @@ export default [
         input,
         plugins: browserBuildPlugins,
         output: {
-            name: 'eusiBrowser',
+            name: 'eusiCore',
             file: pkg.browser,
             format: 'umd',
         }
@@ -36,9 +36,9 @@ export default [
         input,
         plugins: browserBuildPlugins.concat(uglify()),
         output: {
-            file: 'dist/browser/eusi-core.min.js',
+            file: 'dist/browser/eusi-sdk-core.min.js',
             format: 'umd',
-            name: 'eusiBrowser'
+            name: 'eusiCore'
         }
     },
     // CommonJS (for Node) and ES module (for bundlers) build.
