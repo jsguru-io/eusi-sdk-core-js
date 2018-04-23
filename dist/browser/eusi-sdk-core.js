@@ -82,9 +82,9 @@ var getFilter = function getFilter(name) {
 };
 
 var singleFilterParser = {
-    type: getFilter('sys.type'),
+    contentModel: getFilter('sys.type'),
     key: getFilter('sys.key'),
-    name: getFilter('sys.name'),
+    title: getFilter('sys.name'),
     taxonomyName: getFilter('sys.taxonomy.name'),
     taxonomyId: getFilter('sys.taxonomy'),
     taxonomyPath: getFilter('sys.taxonomy.path'),
@@ -137,21 +137,21 @@ var Content = (function (_ref) {
             token = _ref2.token;
 
         var key = query.key,
-            name = query.name,
+            title = query.title,
             taxonomyId = query.taxonomyId,
             taxonomyName = query.taxonomyName,
             taxonomyPath = query.taxonomyPath,
-            type = query.type,
+            contentModel = query.contentModel,
             field = query.field;
 
         checkAccessToken(token);
         var params = parseFilter({
             key: key,
-            name: name,
+            title: title,
             taxonomyId: taxonomyId,
             taxonomyName: taxonomyName,
             taxonomyPath: taxonomyPath,
-            type: type,
+            contentModel: contentModel,
             field: field
         });
 
@@ -173,15 +173,15 @@ var Content = (function (_ref) {
         });
     };
 
-    var getByName = function getByName(contentName, options) {
+    var getByTitle = function getByTitle(contentTitle, options) {
         return get({
-            name: contentName
+            title: contentTitle
         }, options);
     };
 
-    var getByType = function getByType(contentType, options) {
+    var getByContentModel = function getByContentModel(contentModel, options) {
         return get({
-            type: contentType
+            contentModel: contentModel
         }, options);
     };
 
@@ -212,11 +212,24 @@ var Content = (function (_ref) {
     return {
         get: get,
         getByTaxonomyPath: getByTaxonomyPath,
-        getByType: getByType,
+        // making alias method so we don't break the previous version
+        getByType: function getByType(type, options) {
+            console.warn('DEPRECATED: method getByType is deprecated and won\'t be available ' + 'from the version 2.00. Please use getByContentModel instead');
+            return getByContentModel(type, options);
+        },
+
+        getByContentModel: getByContentModel,
         getById: getOne,
+        getByKey: getOne,
         getByTaxonomyId: getByTaxonomyId,
         getByTaxonomyName: getByTaxonomyName,
-        getByName: getByName,
+        getByTitle: getByTitle,
+        // making alias method so we don't break the previous version
+        getByName: function getByName(name, options) {
+            console.warn('DEPRECATED: method getByName is deprecated and won\'t be' + ' available from the version 2.00. Please use getByTitle instead');
+            return getByTitle(name, options);
+        },
+
         getByField: getByField
     };
 });
