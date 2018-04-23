@@ -77,8 +77,12 @@ var getFilter = function getFilter(name) {
 
 var singleFilterParser = {
     contentModel: getFilter('sys.type'),
+    // keeping alias until version 2.0.0
+    type: getFilter('sys.type'),
     key: getFilter('sys.key'),
     title: getFilter('sys.name'),
+    // keeping alias until version 2.0.0
+    name: getFilter('sys.name'),
     taxonomyName: getFilter('sys.taxonomy.name'),
     taxonomyId: getFilter('sys.taxonomy'),
     taxonomyPath: getFilter('sys.taxonomy.path'),
@@ -208,7 +212,7 @@ var Content = (function (_ref) {
         getByTaxonomyPath: getByTaxonomyPath,
         // making alias method so we don't break the previous version
         getByType: function getByType(type, options) {
-            console.warn('DEPRECATED: method getByType is deprecated and won\'t be available ' + 'from the version 2.00. Please use getByContentModel instead');
+            console.warn('DEPRECATED: method getByType is deprecated and won\'t be available ' + 'from the version 2.0.0. Please use getByContentModel instead');
             return getByContentModel(type, options);
         },
 
@@ -220,7 +224,7 @@ var Content = (function (_ref) {
         getByTitle: getByTitle,
         // making alias method so we don't break the previous version
         getByName: function getByName(name, options) {
-            console.warn('DEPRECATED: method getByName is deprecated and won\'t be' + ' available from the version 2.00. Please use getByTitle instead');
+            console.warn('DEPRECATED: method getByName is deprecated and won\'t be' + ' available from the version 2.0.0. Please use getByTitle instead');
             return getByTitle(name, options);
         },
 
