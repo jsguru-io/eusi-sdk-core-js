@@ -78,7 +78,7 @@ var getFilter = function getFilter(name) {
 };
 
 var singleFilterParser = {
-    contentModel: getFilter('sys.type'),
+    model: getFilter('sys.type'),
     // keeping alias until version 2.0.0
     type: getFilter('sys.type'),
     key: getFilter('sys.key'),
@@ -141,7 +141,7 @@ var Content = (function (_ref) {
             taxonomyId = query.taxonomyId,
             taxonomyName = query.taxonomyName,
             taxonomyPath = query.taxonomyPath,
-            contentModel = query.contentModel,
+            model = query.model,
             field = query.field;
 
         checkAccessToken(token);
@@ -151,7 +151,7 @@ var Content = (function (_ref) {
             taxonomyId: taxonomyId,
             taxonomyName: taxonomyName,
             taxonomyPath: taxonomyPath,
-            contentModel: contentModel,
+            model: model,
             field: field
         });
 
@@ -179,9 +179,9 @@ var Content = (function (_ref) {
         }, options);
     };
 
-    var getByContentModel = function getByContentModel(contentModel, options) {
+    var getByModel = function getByModel(contentModel, options) {
         return get({
-            contentModel: contentModel
+            model: contentModel
         }, options);
     };
 
@@ -214,11 +214,11 @@ var Content = (function (_ref) {
         getByTaxonomyPath: getByTaxonomyPath,
         // making alias method so we don't break the previous version
         getByType: function getByType(type, options) {
-            console.warn('DEPRECATED: method getByType is deprecated and won\'t be available ' + 'from the version 2.0.0. Please use getByContentModel instead');
-            return getByContentModel(type, options);
+            console.warn('DEPRECATED: method getByType is deprecated and won\'t be available ' + 'from the version 2.0.0. Please use getByModel instead');
+            return getByModel(type, options);
         },
 
-        getByContentModel: getByContentModel,
+        getByModel: getByModel,
         getById: getOne,
         getByKey: getOne,
         getByTaxonomyId: getByTaxonomyId,
