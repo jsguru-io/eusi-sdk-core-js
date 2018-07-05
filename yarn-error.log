@@ -1,0 +1,98 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js publish
+
+PATH: 
+  C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin;C:\Program Files (x86)\GitExtensions\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Git\cmd;C:\Users\User.DESKTOP-88UV0M9\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin
+
+Yarn version: 
+  1.1.0
+
+Node version: 
+  8.6.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "eusi-sdk-core",
+    "version": "1.1.0",
+    "description": "SDK for accessing EUSI delivery API",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/jsguru-io/eusi-sdk-core-js"
+    },
+    "keywords": [
+      "eusi",
+      "sdk",
+      "core",
+      "CMS",
+      "headless",
+      "delivery",
+      "API"
+    ],
+    "browser": "dist/browser/eusi-sdk-core.js",
+    "main": "dist/cjs/eusi-sdk-core.js",
+    "module": "dist/es/eusi-sdk-core.js",
+    "author": "JS Guru International",
+    "license": "MIT",
+    "devDependencies": {
+      "babel-eslint": "^8.0.2",
+      "babel-plugin-external-helpers": "^6.22.0",
+      "babel-preset-env": "^1.6.0",
+      "eslint": "^4.10.0",
+      "eslint-config-airbnb": "^16.1.0",
+      "eslint-plugin-import": "^2.8.0",
+      "eslint-plugin-jsx-a11y": "^6.0.3",
+      "eslint-plugin-react": "^7.6.0",
+      "husky": "^0.14.3",
+      "jest": "^22.2.1",
+      "jest-cli": "^22.1.4",
+      "lint-staged": "^5.0.0",
+      "rollup": "^0.55.0",
+      "rollup-plugin-babel": "^2.7.1",
+      "rollup-plugin-commonjs": "^8.0.2",
+      "rollup-plugin-node-resolve": "^3.0.0",
+      "rollup-plugin-strip": "^1.1.1",
+      "rollup-plugin-uglify": "^3.0.0"
+    },
+    "scripts": {
+      "build": "rollup -c",
+      "dev": "rollup -c -w",
+      "precommit": "lint-staged && npm run build && npm run test && git add --all",
+      "test": "jest",
+      "test-watch": "jest --watch",
+      "test-debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand "
+    },
+    "files": [
+      "dist",
+      "lib"
+    ],
+    "jest": {
+      "clearMocks": true
+    },
+    "lint-staged": {
+      "lib/**/*.js": [
+        "eslint --fix"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: https://registry.yarnpkg.com/eusi-sdk-core: You must be logged in to publish packages.
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:61779:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:121917:22)
+      at emitTwo (events.js:125:13)
+      at Request.emit (events.js:213:7)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:122900:10)
+      at emitOne (events.js:115:13)
+      at Request.emit (events.js:210:7)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:122820:12)
+      at Object.onceWrapper (events.js:314:30)
+      at emitNone (events.js:110:20)

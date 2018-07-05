@@ -209,6 +209,23 @@ var Content = (function (_ref) {
         }, options);
     };
 
+    var purchaseContent = function purchaseContent(contentId, _ref4) {
+        var currency = _ref4.currency,
+            description = _ref4.description,
+            notifyUrl = _ref4.notifyUrl,
+            token = _ref4.token;
+
+        checkAccessToken(token);
+        return httpService.post(baseUrl + '/' + bucketKey + '/purchase-content/' + contentId, {
+            body: {
+                currency: currency,
+                description: description,
+                notify_url: notifyUrl
+            },
+            headers: getCommonHeaders(token)
+        });
+    };
+
     return {
         get: get,
         getByTaxonomyPath: getByTaxonomyPath,
@@ -230,7 +247,8 @@ var Content = (function (_ref) {
             return getByTitle(name, options);
         },
 
-        getByField: getByField
+        getByField: getByField,
+        purchaseContent: purchaseContent
     };
 });
 
